@@ -1,0 +1,10 @@
+[mysqld]
+user            = mysql          # System user that runs MariaDB daemon
+pid-file        = /run/mysqld/mysqld.pid    # File storing process ID of the server
+socket          = /run/mysqld/mysqld.sock   # Unix socket for local connections
+port            = 3306           # Default MariaDB port number
+basedir         = /usr           # Base directory for MariaDB installation
+datadir         = /var/lib/mysql # Directory where databases are stored
+tmpdir          = /tmp           # Directory for temporary files
+bind-address    = 0.0.0.0        # Listen on all interfaces (needed for container communication)
+skip-networking = false          # Allow remote connections (needed for WordPress container)
