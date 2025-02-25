@@ -39,4 +39,5 @@ EOF
 # update ownership
 chown www-data:www-data /var/www/html/wordpress/wp-config.php
 # start php-fpm
+echo "Starting PHP-FPM..."
 exec php-fpm7.4 -F
