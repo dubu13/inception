@@ -1,0 +1,9 @@
+.env
+secrets/*
+!secrets/.gitkeep
+/data
+.DS_Store
+.vscode/
+*.swp
+*~
+.docker/
