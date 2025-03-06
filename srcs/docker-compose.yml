@@ -19,6 +19,8 @@ services:
     restart: always
     expose:
       - "3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
 
   wordpress:
     build:
@@ -26,7 +28,9 @@ services:
       dockerfile: Dockerfile
     container_name: wordpress
     depends_on:
-      - mariadb
+      mariadb:
+        condition: service_healthy
+      
     secrets:
       - db_user_password
       - wp_admin_password
